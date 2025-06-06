@@ -20,6 +20,7 @@ from starlette.status import HTTP_401_UNAUTHORIZED
 from beeai_server.configuration import Configuration
 from beeai_server.service_layer.services.acp import AcpProxyService
 from beeai_server.service_layer.services.env import EnvService
+from beeai_server.service_layer.services.files import FileService
 from beeai_server.service_layer.services.provider import ProviderService
 from fastapi import Depends, HTTPException
 from kink import di
@@ -28,6 +29,7 @@ ConfigurationDependency = Annotated[Configuration, Depends(lambda: di[Configurat
 ProviderServiceDependency = Annotated[ProviderService, Depends(lambda: di[ProviderService])]
 AcpProxyServiceDependency = Annotated[AcpProxyService, Depends(lambda: di[AcpProxyService])]
 EnvServiceDependency = Annotated[EnvService, Depends(lambda: di[EnvService])]
+FileServiceDependency = Annotated[FileService, Depends(lambda: di[FileService])]
 
 
 def admin_auth(

@@ -30,6 +30,7 @@ dependencies = [
     "alembic>=1.15.2",
     "asyncpg>=0.30.0",
     "sqlalchemy[asyncio]>=2.0.41",
+    "aioboto3>=14.3.0",
 ]
 
 [tool.ruff]
@@ -38,6 +39,7 @@ line-length = 120
 [project.scripts]
 beeai-server = "beeai_server:serve"
 migrate = "beeai_server:migrate"
+create-buckets = "beeai_server:create_buckets"
 
 [build-system]
 requires = ["hatchling"]
